@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "nodemon": "^1.18.6"
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.6",
+    "sequelize": "^4.41.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
