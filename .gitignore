@@ -1,3 +1,4 @@
 /node_modules
 /csvData
 /package-lock.json
+/.env
