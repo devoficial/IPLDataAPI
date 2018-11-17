@@ -81,10 +81,11 @@ const economicalBowlers = (req,res) => {
         let data = matches.map(match => match.dataValues).map(calculateEconomy)
          res.json(data);
         function calculateEconomy(value) {
-            const {match, bowler, overs, economy} = value;
-            let economyOfbower = (parseInt(economy)/(overs/6)).toFixed(2)
-            return { match , bowler, economyOfbower}
+            const { match, bowler, overs, economy} = value;
+            let economyOfbower = ((economy)/(overs/6)).toFixed(2);
+            return { match, bowler, economyOfbower }
         }
+        
     })
     .catch((err) => res.send(err))
 }
