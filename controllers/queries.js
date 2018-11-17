@@ -79,17 +79,16 @@ const economicalBowlers = (req,res) => {
         limit:10                  
     }).then(matches => {
         let data = matches.map(match => match.dataValues).map(calculateEconomy)
-         res.json(data);
-        function calculateEconomy(value) {
-            const { match, bowler, overs, economy} = value;
-            let economyOfbower = ((economy)/(overs/6)).toFixed(2);
-            return { match, bowler, economyOfbower }
-        }
+        res.json(data);
         
     })
     .catch((err) => res.send(err))
 }
 
-
+function calculateEconomy(value) {
+    const { match, bowler, overs, economy} = value;
+    let economyOfbower = ((economy)/(overs/6)).toFixed(2);
+    return { match, bowler, economyOfbower }
+}
 
 export { findNumberOfMatchs, winnersList,yuvrajSingh, extraRunsPerTeam, economicalBowlers }
